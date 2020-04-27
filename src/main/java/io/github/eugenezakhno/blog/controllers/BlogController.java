@@ -27,6 +27,12 @@ public class BlogController {
         model.addAttribute("posts", posts);
         return "blog-add";
     }
+    @PostMapping("/blog/add")
+    public String blogPostAdd(Model model){
+
+        return "";
+    }
+
 
 
 }

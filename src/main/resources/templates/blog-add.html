@@ -8,10 +8,13 @@
 <body>
 <header th:insert="blocks/header :: header"></header>
 
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
     <h1> Adding the article </h1>
     <form action="/blog/add" method="post">
-        <input type="text" name="title">
+        <input type="text" name="title" placeholder="enter the name of article" class="form-control"><br>
+        <input type="text" name="anons" placeholder="enter anons" class="form-control"><br>
+        <textarea name="full_text" placeholder="enter text here" class="form-control"></textarea><br>
+        <button type="submit" class="btn btn-success"> add an article</button>
     </form>
 </div>
 

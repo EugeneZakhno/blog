@@ -20,6 +20,10 @@ public class Post {
 
     private int views;
 
+    public Post() {
+    }
+
+
     public Post(String title, String anons, String full_text) {
         this.title = title;
         this.anons = anons;

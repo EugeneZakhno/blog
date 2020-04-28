@@ -28,11 +28,16 @@ public class BlogController {
         model.addAttribute("posts", posts);
         return "blog-add";
     }
+
     @PostMapping("/blog/add")
     public String blogPostAdd(@RequestParam String title, @RequestParam String anons, @RequestParam String full_text, Model model){
         Post post = new Post(title,anons,full_text);
-        return "";
+        postRepository.save(post);
+        return "redirect:/blog";
     }
+
+
+
 
 
 

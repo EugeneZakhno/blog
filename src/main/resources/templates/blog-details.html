@@ -16,7 +16,7 @@
         <p><b>Quantity of views: </b><span th:text="${el.views}"/></p>
         <a th:href="'/blog/'+ ${el.id} + '/edit'" class="btn btn-warning"> Edit </a><br><br>
         <form th:action="'/blog/' + ${el.id} +'/remove'" method="post">
-            <button class="btn btn-warning" type="submit"> Remove</button>
+            <button class="btn btn-warning" type="submit"> Delete </button>
         </form>
     </div>
 </div>

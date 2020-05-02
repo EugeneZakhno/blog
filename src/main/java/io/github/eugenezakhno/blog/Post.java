@@ -1,4 +1,4 @@
-package io.github.eugenezakhno.blog.models;
+package io.github.eugenezakhno.blog;
 
 
 import javax.persistence.Entity;

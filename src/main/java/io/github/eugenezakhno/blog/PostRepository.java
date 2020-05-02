@@ -1,6 +1,6 @@
-package io.github.eugenezakhno.blog.repositoires;
+package io.github.eugenezakhno.blog;
 
-import io.github.eugenezakhno.blog.models.Post;
+import io.github.eugenezakhno.blog.Post;
 import org.springframework.data.repository.CrudRepository;
 
 public interface PostRepository extends CrudRepository<Post,Long> {

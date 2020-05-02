@@ -1,5 +1,7 @@
-package io.github.eugenezakhno.blog;
+package io.github.eugenezakhno.blog.controllers;
 
+import io.github.eugenezakhno.blog.models.Post;
+import io.github.eugenezakhno.blog.repositoires.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,4 +1,4 @@
-package io.github.eugenezakhno.blog;
+package io.github.eugenezakhno.blog.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -12,9 +12,7 @@
 <div class="container mt-5">
     <h1> Blog of site </h1>
     <div th:each="el : ${posts}" class="alert alert-info mt-2">
-        <!--/*@thymesVar id="title" type="java"*/-->
         <h3 th:text="${el.title}"></h3>
-        <!--/*@thymesVar id="anons" type="text"*/-->
         <p th:text="${el.anons}"></p>
         <a th:href="'/blog/'+ ${el.id}" class="btn btn-warning"> details</a>
     </div>

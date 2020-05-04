@@ -1,1 +1,1 @@
-# Look it by reference https://blog-is.herokuapp.com/
+# Look it by reference https://blog-is.herokuapp.com

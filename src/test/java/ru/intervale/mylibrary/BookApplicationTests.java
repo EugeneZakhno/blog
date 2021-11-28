@@ -1,10 +1,10 @@
-package io.github.eugenezakhno.blog;
+package ru.intervale.mylibrary;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BlogApplicationTests {
+class BookApplicationTests {
 
 	@Test
 	void contextLoads() {

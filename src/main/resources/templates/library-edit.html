@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title> Edit of article</title>
+    <title> Редактирование </title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -10,13 +10,13 @@
 <header th:insert="blocks/header :: header"></header>
 
 <div class="container mt-5 mb-5">
-    <h1> Edit the article </h1>
+    <h1> Редактирование записи </h1>
     <div th:each="el : ${post}">
     <form method="post">
         <input type="text" th:value="${el.title}"  name="title" placeholder="enter the name of article" class="form-control"><br>
         <input type="text" th:value="${el.anons}" name="anons" placeholder="enter anons" class="form-control"><br>
-        <textarea  name="full_text"  placeholder="enter text here" class="form-control" th:text="${el.full_text}" /><br>
-        <button type="submit" class="btn btn-success">Update the article</button>
+        <textarea  name="fullText"  placeholder="enter text here" class="form-control" th:text="${el.fullText}"></textarea><br>
+        <button type="submit" class="btn btn-success">Обновить </button>
     </form>
     </div>
 </div>

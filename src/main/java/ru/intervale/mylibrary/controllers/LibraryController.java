@@ -1,7 +1,7 @@
-package io.github.eugenezakhno.blog.controllers;
+package ru.intervale.mylibrary.controllers;
 
-import io.github.eugenezakhno.blog.models.Post;
-import io.github.eugenezakhno.blog.repositoires.PostRepository;
+import ru.intervale.mylibrary.models.Post;
+import ru.intervale.mylibrary.repositoires.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,69 +14,68 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 @Controller
-public class BlogController {
+public class LibraryController {
 
     @Autowired
     private PostRepository postRepository;
 
-    @GetMapping("/blog")
-    public String blogMain(Model model) {
+    @GetMapping("/library")
+    public String libraryMain(Model model) {
         Iterable<Post> posts = postRepository.findAll();
         model.addAttribute("posts", posts);
-        return "blog-main";
+        return "library-main";
     }
 
-    @GetMapping("/blog/add")
-    public String blogAdd(Model model) {
+    @GetMapping("/library/add")
+    public String libraryAdd(Model model) {
         Iterable<Post> posts = postRepository.findAll();
         model.addAttribute("posts", posts);
-        return "blog-add";
+        return "library-add";
     }
 
-    @PostMapping("/blog/add")
-    public String blogPostAdd(@RequestParam String title, @RequestParam String anons, @RequestParam String full_text, Model model){
-        Post post = new Post(title,anons,full_text);
+    @PostMapping("/library/add")
+    public String libraryPostAdd(@RequestParam String title, @RequestParam String anons, @RequestParam String fullText, Model model){
+        Post post = new Post(title,anons,fullText);
         postRepository.save(post);
-        return "redirect:/blog";
+        return "redirect:/library";
     }
 
-
-    @GetMapping("/blog/{id}")
-    public String blogDetails(@PathVariable(value = "id") long id, Model model) {
+    @GetMapping("/library/{id}")
+    public String libraryDetails(@PathVariable(value = "id") long id, Model model) {
         if(!postRepository.existsById(id)){
-            return "redirect:/blog";
+            return "redirect:/library";
         }
        Optional <Post> post =  postRepository.findById(id);
        ArrayList <Post> res = new ArrayList<>();
        post.ifPresent(res::add);
        model.addAttribute("post", res);
-       return "blog-details";
+       return "library-details";
     }
-    @GetMapping("/blog/{id}/edit")
-    public String blogEdit(@PathVariable(value = "id") long id, Model model) {
+    @GetMapping("/library/{id}/edit")
+    public String libraryEdit(@PathVariable(value = "id") long id, Model model) {
         if(!postRepository.existsById(id)){
-            return "redirect:/blog";
+            return "redirect:/library";
         }
         Optional <Post> post =  postRepository.findById(id);
         ArrayList <Post> res = new ArrayList<>();
         post.ifPresent(res::add);
         model.addAttribute("post", res);
-        return "blog-edit";
+        return "library-edit";
     }
 
-    @PostMapping("/blog/{id}/edit")
-    public String blogPostUpdate(@PathVariable(value = "id") long id, @RequestParam String title, @RequestParam String anons, @RequestParam String full_text, Model model){
+    @PostMapping("/library/{id}/edit")
+    public String libraryPostUpdate(@PathVariable(value = "id") long id, @RequestParam String title, @RequestParam String anons, @RequestParam String fullText, Model model){
         Post post = postRepository.findById(id).orElseThrow();
         post.setTitle(title);
         post.setAnons(anons);
-        post.setFull_text(full_text);
+        post.setFullText(fullText);
         postRepository.save(post);
-        return "redirect:/blog";
+        return "redirect:/library";
     }
-    @PostMapping("/blog/{id}/remove")
-    public String blogPostDelete(@PathVariable(value = "id") long id, Model model){
+    @PostMapping("/library/{id}/remove")
+    public String libraryPostDelete(@PathVariable(value = "id") long id, Model model){
         Post post = postRepository.findById(id).orElseThrow();
         postRepository.delete(post);
-        return "redirect:/blog";
+        return "redirect:/library";
     }
 }

@@ -1,6 +1,6 @@
-package io.github.eugenezakhno.blog.repositoires;
+package ru.intervale.mylibrary.repositoires;
 
-import io.github.eugenezakhno.blog.models.Post;
+import ru.intervale.mylibrary.models.Post;
 import org.springframework.data.repository.CrudRepository;
 
 public interface PostRepository extends CrudRepository<Post,Long> {

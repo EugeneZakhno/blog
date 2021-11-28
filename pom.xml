@@ -8,10 +8,10 @@
 		<version>2.2.6.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>io.github.eugenezakhno</groupId>
-	<artifactId>blog</artifactId>
+	<groupId>ru.intervale.mylibrary</groupId>
+	<artifactId>books</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>blog</name>
+	<name>library</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

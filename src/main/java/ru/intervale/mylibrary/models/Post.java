@@ -1,24 +1,32 @@
-package io.github.eugenezakhno.blog.models;
+package ru.intervale.mylibrary.models;
 
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.sql.Timestamp;
 
 @Entity
 public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private long id;
 
-    private String title, anons, full_text;
-
+    private String title;
+    private String anons;
+    private String fullText;
     private int views;
+    private Timestamp data;
 
     public Post() {
+    }
+
+    public Post(String title, String anons, String fullText) {
+        this.title = title;
+        this.anons = anons;
+        this.fullText = fullText;
     }
 
     public long getId() {
@@ -45,12 +53,12 @@ public class Post {
         this.anons = anons;
     }
 
-    public String getFull_text() {
-        return full_text;
+    public String getFullText() {
+        return fullText;
     }
 
-    public void setFull_text(String full_text) {
-        this.full_text = full_text;
+    public void setFullText(String fullText) {
+        this.fullText = fullText;
     }
 
     public int getViews() {
@@ -61,9 +69,5 @@ public class Post {
         this.views = views;
     }
 
-    public Post(String title, String anons, String full_text) {
-        this.title = title;
-        this.anons = anons;
-        this.full_text = full_text;
-    }
+
 }

@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: change-set/BOOKS-1.xml
+      relativeToChangelogFile: true

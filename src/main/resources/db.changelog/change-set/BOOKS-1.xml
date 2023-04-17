@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.liquibase.org/xml/ns/dbchangelog">
+
+    <changeSet author="ezohno" id="BOOKS-1-createTable">
+        <createTable tableName="POST">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints primaryKeyName="pk_PERSON_PROFILE" primaryKey="true" nullable="false"/>
+            </column>
+            <column name="TITLE" type="varchar(50)"/>
+            <column name="ANONS" type="varchar(50)"/>
+            <column name="FULLTEXT" type="varchar(2900)"/>
+            <column name="VIEWS" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

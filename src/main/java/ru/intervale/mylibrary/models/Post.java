@@ -1,24 +1,24 @@
 package ru.intervale.mylibrary.models;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.sql.Timestamp;
+import lombok.Builder;
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
-@Entity
+@Slf4j
+@Data
+@Component
+@Table("POST")
 public class Post {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
     private String title;
     private String anons;
-    private String fullText;
+    private String fulltext;
     private int views;
-    private Timestamp data;
 
     public Post() {
     }
@@ -26,7 +26,7 @@ public class Post {
     public Post(String title, String anons, String fullText) {
         this.title = title;
         this.anons = anons;
-        this.fullText = fullText;
+        this.fulltext = fullText;
     }
 
     public long getId() {
@@ -54,11 +54,11 @@ public class Post {
     }
 
     public String getFullText() {
-        return fullText;
+        return fulltext;
     }
 
     public void setFullText(String fullText) {
-        this.fullText = fullText;
+        this.fulltext = fullText;
     }
 
     public int getViews() {

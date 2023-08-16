@@ -15,9 +15,9 @@ spring:
     console:
       enabled: true  #http://localhost:8083/h2-console
   jpa:               #http://localhost:8083
-    show-sql: true
-    hibernate:
-      ddl-auto: update
+    show-sql: true     #http://46.56.82.33:8083  office
+    hibernate:          #http://192.168.65.143:8083  VPNTOKEN
+      ddl-auto: update  #http://10.16.67.49:8083   wifi  (но для телефона другая сеть wifi )
 
   http:
     encoding:

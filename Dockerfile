@@ -11,4 +11,4 @@ FROM openjdk:11
 WORKDIR /app
 COPY --from=build /app/target/*.jar /app/app.jar
 EXPOSE 8083
-ENTRYPOINT ["java","jar app.jar"]
+ENTRYPOINT ["java","jar", "app.jar"]
